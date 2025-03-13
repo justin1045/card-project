@@ -53,6 +53,9 @@ function displayCard(obj) {
     fragment.append(details);
   }
 
+  const buttonDiv = document.createElement("div");
+  buttonDiv.classList.add("buttonDiv");
+
   const editButton = document.createElement("button");
   editButton.innerText = "Edit";
 
@@ -61,6 +64,19 @@ function displayCard(obj) {
     form.style.display = "block";
   });
 
-  resultDiv.append(fragment, editButton);
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "Delete";
+  deleteButton.style.backgroundColor = "red";
+
+  deleteButton.addEventListener("click" , (e) => {
+    localStorage.removeItem("data");
+    form.style.display = "block";
+    resultDiv.style.display = "none";
+
+  });
+
+  buttonDiv.append(editButton, deleteButton);
+
+  resultDiv.append(fragment, buttonDiv);
   cardContainer.append(resultDiv);
 }

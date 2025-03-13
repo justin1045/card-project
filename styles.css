@@ -78,7 +78,7 @@
   }
   
   /* ======= CARD STYLING ======= */
-  .card-container div {
+  .card-container > div {
     background: #fff;
     padding: 22px;
     border-radius: 16px;
@@ -103,6 +103,13 @@
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     margin-top: 15px;
+  }
+
+  .buttonDiv {
+
+    display: flex;
+    /* gap: 4rem; */
+    justify-content: space-evenly;
   }
   
   .card-container button:hover {
